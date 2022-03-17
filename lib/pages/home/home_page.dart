@@ -11,6 +11,7 @@ import 'package:sneakears_shop/pages/home/viewed_bloc/viewed_bloc.dart';
 import 'package:sneakears_shop/pages/home/widgets/category_widget.dart';
 import 'package:sneakears_shop/pages/home/widgets/sneakers_widget.dart';
 import 'package:sneakears_shop/pages/home/widgets/viewed_products_widget.dart';
+import 'package:sneakears_shop/utils/text_style.dart';
 
 
 class HomePage extends StatelessWidget{
@@ -30,7 +31,10 @@ class HomePage extends StatelessWidget{
       body: BlocBuilder<ApiBloc, ApiState>(
         builder: (context, state){
           if(state is ApiProgressState){
-            return Container();
+            return const Center(
+              child: CircularProgressIndicator(color: Colors.black),
+            );
+
           } else if(state is ApiSuccessState){
             return BlocBuilder<ViewedBloc, ViewedState>(
               builder: (context, stateViewed) {
@@ -38,7 +42,9 @@ class HomePage extends StatelessWidget{
               }
             );
           } else if(state is ApiErrorState){
-            return Container();
+            return Center(
+              child: Text("Error with Internet", style: SneackersTextStyle.title24,),
+            );
           } else {
             return Container();
           }
@@ -52,10 +58,6 @@ class HomePage extends StatelessWidget{
       color: Colors.white,
       child: Column(
         children: [
-          // Container(
-          //   margin: EdgeInsets.all(3.w),
-          //   child: Text("Shoes of your dreams", style: GoogleFonts.bangers().copyWith(fontSize: 24.sp),),
-          // ),
           CategoriesWidget(
             brands: brandNames,
           ),

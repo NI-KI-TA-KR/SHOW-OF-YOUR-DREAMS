@@ -10,6 +10,7 @@ class ApiBloc extends Bloc<ApiEvent, ApiState>{
   ApiBloc() : super(ApiProgressState()){
     on<ApiInitializeEvent>((event, emit) async{
       try{
+        emit(ApiProgressState());
         final List<Sneakers> sneakers = await sl<SneakersRepository>().getSneakers();
         emit(ApiSuccessState(sneakers: sneakers, brandNames:  sneakers.listOfBrands));
       } catch(_){
@@ -17,6 +18,7 @@ class ApiBloc extends Bloc<ApiEvent, ApiState>{
       }
     });
     on<ApiFindBrandEvent>((event, emit) async{
+      emit(ApiProgressState());
       try{
         final List<Sneakers> sneakers = await sl<SneakersRepository>().getSneakers();
         final List<Sneakers> result = [];
