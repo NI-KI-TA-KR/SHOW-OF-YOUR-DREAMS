@@ -5,3 +5,9 @@
 <p align="center">
 <img src="https://github.com/NIKITA-INMOST/SHOW-OF-YOUR-DREAMS/blob/9beeadd2b31ea754fda900130559c87b8f59cd23/previews/screen.png"/>
 </p>
+
+## Download
+Go to the [Releases](https://github.com/skydoves/Pokedex/releases) to download the latest APK.
+
+
+<img src="/previews/video.gif" align="right" width="32%"/>
