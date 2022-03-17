@@ -11,3 +11,8 @@ Go to the [Releases](https://github.com/skydoves/Pokedex/releases) to download t
 
 
 <img src="/previews/video.gif" align="right" width="32%"/>
+
+## Flutter package
+
+- State Managment [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
+- Fonts [Google Fonts](https://pub.dev/packages/google_fonts)
